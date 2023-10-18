@@ -1,0 +1,26 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: coworking
+  cloud:
+    config:
+      uri: http://localhost:8888
+  mvc:
+    path match:
+      matching-strategy: ant_path_matcher
+  datasource:
+    password: root
+    url: jdbc:postgresql://localhost:5432/prueba
+    username: postgres
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+  kafka:
+    bootstrap:
+      servers: localhost:9092
